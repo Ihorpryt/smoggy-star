@@ -1,0 +1,14 @@
+---
+import "../styles/global.css";
+import astroLogo from '../assets/astro.svg';
+import TertiaryButton from './TertiaryButton.astro';
+---
+
+<nav class="fixed top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-white/10 h-16 md:h-[78px]">
+    <div class="flex items-center justify-between w-full max-w-6xl mx-auto px-4 h-full">
+        <a href="https://astro.build">
+            <img src={astroLogo.src} width="115" height="48" alt="Smoggy Star Homepage" />
+        </a>
+        <TertiaryButton href="#" text="Contact" />
+    </div>
+</nav>

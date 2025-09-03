@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'Monument Extended';
+    src: url('/fonts/PPMonumentExtended-Black.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+@font-face {
+    font-family: 'PPSupplyMono';
+    src: url('/fonts/PPSupplyMono-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Geist';
+    src: url('/fonts/Geist-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@theme {
+    --font-monument: 'Monument Extended', 'sans-serif';
+    --font-mono: 'PPSupplyMono', 'sans-serif';
+    --font-geist: 'Geist', 'sans-serif';
+
+    --color-dark: #0F1114;
+  }
+
+h2 {
+    @apply font-monument uppercase text-[40px] text-center;
+}
+.description {
+    @apply font-geist text-lg text-center w-full max-w-2xl ;
+}
