@@ -1,6 +1,33 @@
 ---
 import "../styles/global.css";
 import ClientType from './ClientType.astro';
+import Idea from '../assets/idea.svg';
+import InitiativeLead from '../assets/flag.svg';
+import SaaS from '../assets/saas.svg';
+import Agency from '../assets/agency.svg';
+
+const clientTypes = [
+    {
+        title: "Solo Founders",
+        description: "You don’t just need speed. You need someone dependable to turn your ideas into MVPs, prototypes, and first websites on time and done right.",
+        icon: Idea
+    },
+    {
+        title: "Initiative Lead",
+        description: "When you own a deliverable, you don’t have time to babysit. We handle short-term projects quickly and dependably, so you can brief once and move on.",
+        icon: InitiativeLead
+    },
+    {
+        title: "SaaS Teams",
+        description: "Your SaaS works, but the design lags behind. I provide design and development that modernizes your product, improves UX/UI, and avoids the overhead of big agencies.",
+        icon: SaaS
+    },
+    {
+        title: "Agency",
+        description: "You need reliable extra hands. We provide clear SLAs, on-time delivery, and white-label discretion for long-term collaboration and steady partnerships.",
+        icon: Agency
+    }
+]
 ---
 
 <section id="for-whom" class="flex w-full flex-col gap-18 items-center py-48 bg-dark">
@@ -9,5 +36,51 @@ import ClientType from './ClientType.astro';
         <h2>For Whom</h2>
         <p class="description">Different audiences, same outcome: fast, premium work without the overhead.</p>
     </div>
-    <ClientType />
+
+    <div id="horizontal-scroll-section" class="w-full h-[60vh] flex items-center overflow-hidden">
+        <div class="flex gap-6 w-max px-64 will-change-transform">
+            {clientTypes.map((clientType, i) => (
+                <ClientType
+                    title={clientType.title}
+                    description={clientType.description}
+                    index={String(i + 1)}
+                >
+                    <clientType.icon />
+                </ClientType>
+            ))}
+        </div>
+    </div>
+
 </section>
+
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const section = document.querySelector("#horizontal-scroll-section");
+        if (!section) return;
+        const track = section.querySelector(".flex.gap-6");
+        if (!track) return;
+
+        const getScrollDistance = () => Math.max(0, track.scrollWidth - section.clientWidth);
+        const distance = getScrollDistance();
+        if (distance <= 0) return; // nothing to scroll horizontally
+
+        gsap.to(track, {
+            x: () => -getScrollDistance(),
+            ease: "none",
+            scrollTrigger: {
+                trigger: section,
+                start: "center center",
+                end: () => "+=" + getScrollDistance(),
+                scrub: true,
+                pin: true,
+                pinSpacing: true,
+                invalidateOnRefresh: true,
+            }
+        });
+    });
+</script>
