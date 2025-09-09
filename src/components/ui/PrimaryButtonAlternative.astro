@@ -1,0 +1,73 @@
+---
+import "../../styles/global.css";
+const { href, text } = Astro.props;
+---
+
+<div class="flex group relative">
+	<svg class="absolute hidden group-hover:block left-0 bottom-1 z-[3]" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path d="M0 12H12L0 0V12Z" fill="#D0FB36"/>
+	</svg>
+	<svg class="absolute hidden group-hover:block right-0 top-1 z-[3]" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path d="M12 0H0L12 12V0Z" fill="#D0FB36"/>
+	</svg>
+		
+	<!-- BACK 1 -->
+	<div class="absolute top-0 group-hover:top-[10px] left-0 group-hover:left-[-13.5px] transition-all duration-300 ease-in-out">
+		<div class="relative group bg-[#0F1114] font-mono text-base button uppercase py-4 px-6 transition duration-300 ease-in-out" 
+		>
+		<svg class="absolute z-[-1] top-[-210px] left-[-140px]  transition-all duration-300 ease-in-out" width="387" height="251" viewBox="0 0 387 251" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M10.0156 131.272L190.964 193.05L76.7607 100.596L89.3135 73.3037L291.876 110.509L201.567 22.1592L223.246 -9.7584e-06L386.116 159.336L143.556 114.785L278.302 223.869L263.54 250.585L-3.93296e-06 160.609L10.0156 131.272Z" fill="#272A31"/>
+		</svg>
+		<svg class="absolute z-[-1] top-[-50px] left-[100px]  transition-all duration-300 ease-in-out" width="420" height="198" viewBox="0 0 420 198" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M5.59961 111.012L208.162 148.217L76.1279 19.0469L317.145 81.9609L254.92 -1.11429e-05L419.279 10.4697L417.309 41.4072L320.602 35.248L396.024 134.59L181.258 78.5293L302.402 197.044L-2.42782e-06 141.502L5.59961 111.012Z" fill="#272A31"/>
+		</svg>
+		{text}
+		</div>
+	</div>
+	<!-- BACK 2 -->
+	<div class="absolute top-0 group-hover:top-[-10px] right-0 group-hover:right-[-13.5px] transition-all duration-300 ease-in-out">
+		<div class="relative group bg-[#0F1114] font-mono text-base button uppercase py-4 px-6 transition duration-300 ease-in-out" 
+		>
+		<svg class="absolute z-[-1] top-[-210px] left-[-140px]  transition-all duration-300 ease-in-out" width="387" height="251" viewBox="0 0 387 251" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M10.0156 131.272L190.964 193.05L76.7607 100.596L89.3135 73.3037L291.876 110.509L201.567 22.1592L223.246 -9.7584e-06L386.116 159.336L143.556 114.785L278.302 223.869L263.54 250.585L-3.93296e-06 160.609L10.0156 131.272Z" fill="#272A31"/>
+		</svg>
+		<svg class="absolute z-[-1] top-[-50px] left-[100px]  transition-all duration-300 ease-in-out" width="420" height="198" viewBox="0 0 420 198" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M5.59961 111.012L208.162 148.217L76.1279 19.0469L317.145 81.9609L254.92 -1.11429e-05L419.279 10.4697L417.309 41.4072L320.602 35.248L396.024 134.59L181.258 78.5293L302.402 197.044L-2.42782e-06 141.502L5.59961 111.012Z" fill="#272A31"/>
+		</svg>
+		{text}
+		</div>
+	</div>
+	
+	<a class="relative group bg-[#0F1114] font-mono text-base button uppercase py-4 px-6 transition duration-300 ease-in-out" 
+		href={href}>
+
+		<svg class="absolute z-[-1] top-[-210px] left-[-140px] group-hover:top-[-150px] transition-all duration-300 ease-in-out" width="387" height="251" viewBox="0 0 387 251" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M10.0156 131.272L190.964 193.05L76.7607 100.596L89.3135 73.3037L291.876 110.509L201.567 22.1592L223.246 -9.7584e-06L386.116 159.336L143.556 114.785L278.302 223.869L263.54 250.585L-3.93296e-06 160.609L10.0156 131.272Z" fill="#272A31"/>
+		</svg>
+		<svg class="absolute z-[-1] top-[-25px] left-[100px] group-hover:top-[-45px] group-hover:left-[50px] transition-all duration-300 ease-in-out" width="420" height="198" viewBox="0 0 420 198" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M5.59961 111.012L208.162 148.217L76.1279 19.0469L317.145 81.9609L254.92 -1.11429e-05L419.279 10.4697L417.309 41.4072L320.602 35.248L396.024 134.59L181.258 78.5293L302.402 197.044L-2.42782e-06 141.502L5.59961 111.012Z" fill="#272A31"/>
+		</svg>
+			
+		{text}
+	</a>
+</div>
+
+<style>
+    .button {
+		color: #ffffff;
+		clip-path: polygon(
+		0 20%,
+		5% 0,
+		95% 0,
+		100% 20%,
+		100% 80%,
+		95% 100%,
+		5% 100%,
+		0% 80%
+	)
+	}
+
+	.button:hover {
+		color: #ffffff;
+	}
+</style>

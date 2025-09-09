@@ -37,8 +37,8 @@ const clientTypes = [
         <p class="description">Different audiences, same outcome: fast, premium work without the overhead.</p>
     </div>
 
-    <div id="horizontal-scroll-section" class="w-full h-[60vh] flex items-center overflow-hidden">
-        <div class="flex gap-6 w-max px-64 will-change-transform">
+    <div id="horizontal-scroll-section" class="w-full md:h-[60vh] h-auto flex items-center md:overflow-hidden overflow-visible">
+        <div class="flex md:flex-row flex-col gap-6 md:w-max w-full md:px-64 px-6 md:will-change-transform">
             {clientTypes.map((clientType, i) => (
                 <ClientType
                     title={clientType.title}
@@ -60,6 +60,8 @@ const clientTypes = [
     gsap.registerPlugin(ScrollTrigger);
 
     document.addEventListener("DOMContentLoaded", () => {
+        const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+        if (!isDesktop) return;
         const section = document.querySelector("#horizontal-scroll-section");
         if (!section) return;
         const track = section.querySelector(".flex.gap-6");

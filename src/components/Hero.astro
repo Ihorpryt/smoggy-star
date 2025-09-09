@@ -3,13 +3,13 @@ import "../styles/global.css";
 import PrimaryButton from './ui/PrimaryButton.astro';
 ---
 
-<div id="container" class="relative">
+<div id="container" class="relative overflow-hidden">
 	<canvas id="background"></canvas>
 
-	<svg class="absolute bottom-0 left-0" width="336" height="70" viewBox="0 0 336 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<svg class="absolute bottom-0 left-0 w-[173px] h-[36px] md:w-[336px] md:h-[70px]" width="336" height="70" viewBox="0 0 336 70" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<path d="M0 0H216L336 70H0V0Z" fill="#0F1114"/>
 	</svg>
-	<svg class="absolute bottom-0 right-0" width="336" height="70" viewBox="0 0 336 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<svg class="absolute bottom-0 right-0 w-[173px] h-[36px] md:w-[336px] md:h-[70px]" width="336" height="70" viewBox="0 0 336 70" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<path d="M336 0H120L0 70H336V0Z" fill="#0F1114"/>
 	</svg>
 
@@ -19,11 +19,11 @@ import PrimaryButton from './ui/PrimaryButton.astro';
 			<div class="flex flex-col items-center justify-center gap-6 text-white">
 				<p class="uppercase text-sm font-mono">UX / UI / WEB</p>
 				<h1 class="uppercase text-6xl font-monument max-w-6xl text-center">
-					Sites & product UX without agency bloat
+					<span class="max-sm:hidden">Sites & product UX</span> without agency bloat
 				</h1>
 			</div>
 			<section id="links">
-				<PrimaryButton href="#" text="Book 30-min discovery call" />
+				<PrimaryButton href="https://calendly.com/ihorthedesigner/30min" text="Book 30-min discovery call" />
 			</section>
 		</section>
 	</main>

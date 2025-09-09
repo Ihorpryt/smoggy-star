@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+    scroll-behavior: smooth;
+  }
+
 @font-face {
     font-family: 'Monument Extended';
     src: url('/fonts/PPMonumentExtended-Black.woff') format('woff');

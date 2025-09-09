@@ -1,24 +1,46 @@
-<div class="flex flex-col justify-center items-center bg-[#CCFA3C] p-6">
+---
+import "../styles/global.css";
+import PrimaryButtonAlternative from './ui/PrimaryButtonAlternative.astro';
+import FooterLogo from './FooterLogo.astro';
+---
+<div class="flex flex-col justify-center items-center bg-[#CCFA3C] p-6 overflow-hidden">
     <div class="flex flex-col gap-4 justify-center items-center h-[450px] max-w-[435px] w-full">
         <h2>Let’s ship it</h2>
-        <p class="description">Delivering worldwide. Remote-first, async-friendly, clear English comms.</p>
+        <p class="description mb-6">Delivering worldwide. Remote-first, async-friendly, clear English comms.</p>
+        <PrimaryButtonAlternative href="https://calendly.com/ihorthedesigner/30min" text="Book 30-min discovery call" />
     </div>
-    <div class="footer flex flex-col gap-4 justify-center items-center h-[450px] w-full bg-dark">
-        <p class="description text-white">© 2025 Smoggy Star. All rights reserved.</p>
+    <div class="footer flex flex-col  md:gap-4 justify-end items-center h-[150px] md:h-[250px] w-full bg-dark pt-8 md:pt-16 pb-8 overflow-hidden">
+        <FooterLogo />
+		<p class=" flex items-center justify-center text-xs md:text-sm text-white h-16 md:h-30 opacity-25">© 2025 UNHUMAN Studio. All rights reserved</p>
+        
     </div>
 </div>
 
 <style>
     .footer {
         clip-path: polygon(
-		0 3%,
+		0 5%,
 		1% 0,
 		99% 0,
-		100% 3%,
-		100% 97%,
+		100% 5%,
+		100% 95%,
 		99% 100%,
 		1% 100%,
-		0% 97%
+		0% 95%
 	)
+    }
+    @media screen and (max-width: 768px) {
+        .footer {
+            clip-path: polygon(
+		0 10%,
+		5% 0,
+		95% 0,
+		100% 10%,
+		100% 90%,
+		95% 100%,
+		5% 100%,
+		0% 90%
+	)
+        }
     }
 </style>
