@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
+* { box-sizing: border-box; }
+
 html {
-    scroll-behavior: smooth;
-  }
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 
 @font-face {
     font-family: 'Monument Extended';
@@ -36,7 +39,7 @@ html {
   }
 
 h2 {
-    @apply font-monument uppercase text-[40px] text-center;
+    @apply font-monument uppercase text-[32px] md:text-[40px] text-center;
 }
 .description {
     @apply font-geist text-lg text-center w-full max-w-2xl ;

@@ -3,8 +3,17 @@ import "../styles/global.css";
 import PrimaryButtonAlternative from './ui/PrimaryButtonAlternative.astro';
 import FooterLogo from './FooterLogo.astro';
 ---
-<div class="flex flex-col justify-center items-center bg-[#CCFA3C] p-6 overflow-hidden">
-    <div class="flex flex-col gap-4 justify-center items-center h-[450px] max-w-[435px] w-full">
+<div class="flex flex-col justify-center items-center bg-gradient-to-b from-[#C0F952] to-[#EEFF03] p-6 overflow-hidden relative">
+
+	<svg class="md:block hidden absolute top-0 left-[-100px]" width="719" height="790" viewBox="0 0 719 790" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path d="M219.359 -468.533L17.1709 123.871L328.326 -260.604L390.837 -231.859L274.344 402.596L653.717 14.6855L469.497 720.637L718.362 531.635L688.776 996.256L617.92 991.744L637.638 682.096L348.969 901.328L517.493 255.521L162.518 618.485L295.833 -107.594L-53.4043 323.94L-114.597 290.141L152.165 -491.467L219.359 -468.533Z" fill="white"/>
+	</svg>
+	<svg class="absolute bottom-[-250px] right-[-300px] md:right-[-300px]" width="833" height="1488" viewBox="0 0 833 1488" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path d="M333.956 22.9336L131.768 615.338L442.923 230.863L505.434 259.607L388.94 894.062L768.313 506.152L584.094 1212.1L832.959 1023.1L803.373 1487.72L732.517 1483.21L752.234 1173.56L463.565 1392.79L632.09 746.987L277.114 1109.95L410.43 383.873L61.1924 815.407L0 781.607L266.762 0L333.956 22.9336Z" fill="white"/>
+	</svg>
+		
+		
+    <div class="flex flex-col gap-4 justify-center items-center h-[450px] max-w-[435px] w-full z-[10]">
         <h2>Let’s ship it</h2>
         <p class="description mb-6">Delivering worldwide. Remote-first, async-friendly, clear English comms.</p>
         <PrimaryButtonAlternative href="https://calendly.com/ihorthedesigner/30min" text="Book 30-min discovery call" />
