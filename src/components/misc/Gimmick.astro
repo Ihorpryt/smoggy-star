@@ -1,0 +1,52 @@
+---
+import "../../styles/global.css";
+---
+
+<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" class="triad">
+  <rect class="circle1" x="4" y="1" width="4" height="4" rx="2" />
+  <rect class="circle2" y="7" width="4" height="4" rx="2" />
+  <rect class="circle3" x="8" y="7" width="4" height="4" rx="2" />
+</svg>
+
+<style>
+  /* Tweak the accent to match your brand */
+  .triad { --accent: #C0F952; } /* neon lime */
+
+  .circle1, .circle2, .circle3 {
+    fill: #1E1E1E;                /* fallback/base color */
+    transform-box: fill-box;
+    transform-origin: center;
+    /* Two animations: transform "beat" + color "blink" */
+    animation:
+      beat 1.8s ease-in-out infinite,
+      blink 1.8s ease-in-out infinite;
+  }
+
+  .circle1 { animation-delay: 0s, 0s; }
+  .circle2 { animation-delay: .12s, .12s; }
+  .circle3 { animation-delay: .24s, .24s; }
+
+  @keyframes beat {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    35%      { transform: translate(0, -0.6px) scale(1.25); }
+    70%      { transform: translate(0, 0) scale(1.02); }
+  }
+
+  @keyframes blink {
+    0%, 100% { fill: #1E1E1E; }
+    35%      { fill: var(--accent); }
+    70%      { fill: #1E1E1E; }
+  }
+
+  /* Optional: hover to speed up */
+  .triad:hover .circle1,
+  .triad:hover .circle2,
+  .triad:hover .circle3 {
+    animation-duration: 1.2s, 1.2s;
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .circle1, .circle2, .circle3 { animation: none; }
+  }
+</style>
